@@ -1,14 +1,15 @@
 {
-  "name": "phaser3-jam-boilerplate",
+  "name": "toma6",
   "version": "0.0.1",
   "description": "",
+  "repository": "https://github.com/damarte/toma6",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack-dev-server --open --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js"
   },
-  "author": "",
+  "author": "damarte",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.0.0-beta.49",
@@ -24,6 +25,8 @@
     "webpack-merge": "^4.1.2"
   },
   "dependencies": {
+    "canvasinput": "^1.2.7",
+    "parse": "^1.11.1",
     "phaser": "^3.11.0"
   }
 }

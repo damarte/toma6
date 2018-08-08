@@ -13,14 +13,15 @@ export default class CreditsScene extends Scene {
       y: 200,
       font: 'keneyPixel',
       text: 'back',
-      onClick: (self) => {
+      onClick: (event) => {
+        this.back.clearTint()
         this.close()
       },
-      onHover: (self) => {
-        self.setTint(0xff99ff)
+      onHover: (event) => {
+        this.back.setTint(0xff99ff)
       },
-      onOut: (self) => {
-        self.setTint(0xffffff)
+      onOut: (event) => {
+        this.back.clearTint()
       },
       scale: 1.0
     })

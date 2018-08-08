@@ -1,10 +1,13 @@
 import Scene from '../scene'
+import getBackendManager from '../../managers/backendManager'
 
 export default class MadeWithScene extends Scene {
   constructor () {
     super({key: 'madeWithScene'})
-    this.timesplash = 1500
-    this.nextScene = 'mainMenu'
+
+    this.backendManager = getBackendManager()
+
+    this.timesplash = 500
   }
 
   create (params) {
@@ -12,7 +15,11 @@ export default class MadeWithScene extends Scene {
     this.logo = this.add.sprite(this.cameras.main.width/2, this.cameras.main.height/2, 'logo')
 
     this.time.delayedCall(this.timesplash, () => {
-      this.changeToScene(this.nextScene)
+      if (this.backendManager.isLoggedIn()) {
+        this.changeToScene('mainMenuScene')
+      } else {
+        this.changeToScene('loginScene')
+      }
     }, [], this)
   }
 
